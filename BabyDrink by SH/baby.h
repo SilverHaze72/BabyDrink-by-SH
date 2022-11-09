@@ -15,11 +15,8 @@ class Alert {
 public:
 	int drinkFrequency;
 	int nextBibTimer;
-	Alert(int defaultTime) {
-		drinkFrequency = defaultTime;
-	}
 };
-	
-	
+
+
 
 #endif
