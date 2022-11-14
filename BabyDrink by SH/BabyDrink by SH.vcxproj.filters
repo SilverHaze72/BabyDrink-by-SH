@@ -16,10 +16,16 @@
     <Filter Include="Fichiers sources\class">
       <UniqueIdentifier>{13327429-3800-4209-8f1e-69ffac34dd1a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\views">
+      <UniqueIdentifier>{6c22c3b0-9d79-4dfa-91ac-9d6ef2481c62}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BabyDrink by SH.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="mainView.cpp">
+      <Filter>Fichiers sources\views</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
