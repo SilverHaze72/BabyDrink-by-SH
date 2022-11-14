@@ -2,19 +2,21 @@
 #define BABY_H
 
 
-class Biberon {
-
+class alert {
 public:
-	int timeBib;
-	int quantity;
-	bool regur;
+	int timer;
 
+	void addalert(int timer) {
+	};
 };
-class Alert {
+
+class prise {
 
 public:
-	int drinkFrequency;
-	int nextBibTimer;
+	bool drinked;
+	int quantity;
+	int quantityDrink;
+	bool regur;
 };
 
 
