@@ -26,7 +26,6 @@ public:
 	int quantityDrink;
 	bool regur;
 
-public:
 
 	//getter
 	bool getDrinked() {
@@ -52,13 +51,24 @@ public:
 		quantityDrink = quantdri;
 		regur = reg;
 	};
-
 };
 
 class course {
 
+public:
+
 	string produit;
 	int number;
+
+
+	//setter
+	void setProduit(string p) {
+		produit = p;
+	};
+
+	void setnumber(int n) {
+		number = n;
+	};
 
 	//getter
 	string getProduit() {

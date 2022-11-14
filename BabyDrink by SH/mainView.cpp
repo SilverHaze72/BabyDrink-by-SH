@@ -1,4 +1,5 @@
-﻿#include "SDL.h"
+﻿/*
+#include "SDL.h"
 #undef mainView
 #include <iostream>
 
@@ -15,7 +16,7 @@ void render();
 
 int mainView() {
 
-    fullscreen = false;
+   fullscreen = false;
 
     int flags = 0;
     flags = SDL_WINDOW_RESIZABLE;
@@ -87,4 +88,5 @@ class view {
 
 public:
 
-};
+}
+*/

@@ -1,16 +1,33 @@
 ﻿#include "SDL.h"
 #undef main
-#include "baby.h"
+
 #include <iostream>
-#include "mainView.cpp"
-
+#include <string>
+#include <ctime>
 using namespace std;
+#include "baby.h"
+//#include "mainView.cpp"
 
-int main() {
 
-    alert alert1;
-    alert1.addalert(2000);
-    
+
+int main()
+
+{
+
+	int delayBib;
+
+	cout << "Enter the time in seconds to be delayed:";
+
+	cin >> delayBib;
+
+	delayBib *= CLOCKS_PER_SEC;
+
+	clock_t now = clock();
+
+	while (clock() - now < delayBib);
+	cout << "Message Show after delay that you entered" << endl;
+	return 0;
+
 }
 
 
