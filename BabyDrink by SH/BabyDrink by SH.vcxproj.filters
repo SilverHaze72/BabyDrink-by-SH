@@ -27,10 +27,19 @@
     <ClCompile Include="mainView.cpp">
       <Filter>Fichiers sources\views</Filter>
     </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="baby.h">
       <Filter>Fichiers sources\class</Filter>
+    </ClInclude>
+    <ClInclude Include="alarm.h">
+      <Filter>Fichiers sources\class</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
