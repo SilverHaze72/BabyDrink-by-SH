@@ -6,7 +6,6 @@
 #include <ctime>
 using namespace std;
 #include "baby.h"
-#include "Button.cpp"
 //#include "mainView.cpp"
 
 //Screen dimension constants
@@ -17,59 +16,15 @@ const int SCREEN_HEIGHT = 480;
 int main(){
 
 
-	//The window we'll be rendering to
-	SDL_Window* window = NULL;
-
-	//The surface contained by the window
-	SDL_Surface* screenSurface = NULL;
-
-	//initalise SDL
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
-	{
-		cout << "SDL ne peut être initialisé ! SDL_Error: %s\n" << SDL_GetError();
-	}
-	else
-	{
-		//creer window
-		window = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1080, 720, SDL_WINDOW_SHOWN);
-		if (window == NULL)
-		{
-			cout << "Window ne peut être créer ! SDL_Error: %s\n" << SDL_GetError();
-		}
-
-		else
-		{
-			//Fait apparaitre window
-			screenSurface = SDL_GetWindowSurface(window);
-
-			//remplis la window en couleur
-			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 133, 0, 0));
-
-			//Update window
-			SDL_UpdateWindowSurface(window);
-
-			//fonction pour garder la window ouvert
-			SDL_Event e; bool quit = false; while (quit == false) { while (SDL_PollEvent(&e)) { if (e.type == SDL_QUIT) quit = true; } }
-		}
-	}
-	//Destroy window
-	SDL_DestroyWindow(window);
-
-	//Quit SDL subsystems
-	SDL_Quit();
-
-
-
-
-
-
+	string ingredient;
+	int laitTot, laitRest, drinkStat, regStat;
+	bool drink, regur;
 
 	/*
 	//Creation et mise en etat d'un biberon
 	biberon bib;
 
-	int laitTot, laitRest, drinkStat, regStat;
-	bool drink, regur;
+	
 
 	cout << "Le biberon a t-il ete bu ?" << endl << "1 - oui" << endl << "2 - non" << endl << "Reponse : ";
 	cin >> drinkStat;
@@ -96,6 +51,19 @@ int main(){
 	
 	//fin de creation biberon
 	*/
+
+
+	/* Liste de course
+	cout << "entrer le nom d'un ingredient : ";
+	cin >> ingredient;
+	cout << "entrer la quatité de " << ingredient << " pour un biberon : ";
+	cin >> quantIngr;
+
+	course produit1;
+	produit1.addProduit(ingredient, quantIngr);
+	*/
+
+
 
 
 	return 0;

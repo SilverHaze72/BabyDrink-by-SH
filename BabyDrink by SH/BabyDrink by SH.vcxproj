@@ -131,13 +131,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BabyDrink by SH.cpp" />
-    <ClCompile Include="Button.cpp" />
-    <ClCompile Include="mainView.cpp" />
+    <ClCompile Include="view.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="alarm.h" />
     <ClInclude Include="baby.h" />
-    <ClInclude Include="Button.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
