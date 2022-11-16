@@ -56,7 +56,6 @@ public:
 class course {
 
 public:
-
 	string produit;
 	int number;
 

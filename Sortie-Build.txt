@@ -1,5 +1,5 @@
 ﻿L'opération de génération a démarré...
 1>------ Début de la génération : Projet : BabyDrink by SH, Configuration : Debug x64 ------
-1>BabyDrink by SH.cpp
-1>BabyDrink by SH.vcxproj -> C:\Users\tbourion\Documents\cours\Projet 4 - dev en C++\BaByDrink\BabyDrink by SH\x64\Debug\BabyDrink by SH.exe
+1>main.cpp
+1>BabyDrink by SH.vcxproj -> C:\Users\tbourion\Source\Repos\BabyDrink-by-SH\x64\Debug\BabyDrink by SH.exe
 ========== Build : 1 réussite(s), 0 échec(s), 0 à jour, 0 ignorée(s) ==========
