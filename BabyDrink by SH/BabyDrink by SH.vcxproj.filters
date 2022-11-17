@@ -26,8 +26,5 @@
     <ClInclude Include="baby.h">
       <Filter>Fichiers sources\class</Filter>
     </ClInclude>
-    <ClInclude Include="alarm.h">
-      <Filter>Fichiers sources\class</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 #include <ctime>
+#include <stdlib.h>
+#include <conio.h>
 #include "SDL_image.h"
 #include <stdio.h>
 #include <cmath>
@@ -84,6 +86,11 @@ void close()
 	SDL_Quit();
 }
 
+void clrscr()
+{
+	system("cls");
+};
+
 int main(int argc, char* args[])
 {
 	//Start up SDL and create window
@@ -137,42 +144,99 @@ int main(int argc, char* args[])
 	//Free resources and close SDL
 	close();
 
+	
 
 	string ingredient;
 	int laitTot, laitRest, drinkStat, regStat, quantIngr;
+	int choiceMenu;
+	int newTimeAlert, hours, minutes;
 	bool drink = true, regur = true;
 
-	
+	start:
+		cout << " ---------------------" << endl;
+		cout << "||                   ||" << endl;
+		cout << "||     Baby Drink    ||" << endl;
+		cout << "||                   ||" << endl;
+		cout << " ---------------------" << endl << endl;
 
-	//Creation et mise en etat d'un biberon
-	biberon bib;
+		cout << "       Main menu     " << endl << endl;
+		cout << "1 - Prise de biberon" << endl;
+		cout << "2 - Ajouter une alerte" << endl;
+		cout << "3 - Liste de course" << endl;
+		cout << "4 - Settings" << endl << endl;
+		cout << "5 - Quitter" << endl << endl;
+		cout << "Choix: ";
+		cin >> choiceMenu;
 
-	cout << "Le biberon a t-il ete bu ?" << endl << "1 - oui" << endl << "2 - non" << endl << "Reponse : ";
-	cin >> drinkStat;
-	cout << "entrer la quantite de lait dans le biberon (en cl) : ";
-	cin >> laitTot;
-	cout << "entrer la quantite restante dans le biberon (en cl) : ";
-	cin >> laitRest;
-	cout << " Le bebe a t-il regurgite ?" << endl << "1 - oui" << endl << "2 - non" << endl << "Reponse : ";
-	cin >> regStat;
-	cout << endl;
+	if (choiceMenu >= 1 && choiceMenu <= 5) {
+		
+		switch (choiceMenu) {
 
-	if (drinkStat == 1)
-		drink = true;
-	else if(drinkStat == 2)
-		drink = false;
+			case 1:
+				clrscr();
 
-	if (regStat == 1)
-		regur = true;
-	else if (regStat == 2)
-		regur = false;
+				biberon bib;
 
-	bib.biberonStatut(drink, laitTot, laitTot - laitRest, regur);
+				cout << "Le biberon a t-il ete bu ?" << endl << "1 - oui" << endl << "2 - non" << endl << "Reponse : ";
+				cin >> drinkStat;
+				cout << "entrer la quantite de lait dans le biberon (en cl) : ";
+				cin >> laitTot;
+				cout << "entrer la quantite restante dans le biberon (en cl) : ";
+				cin >> laitRest;
+				cout << " Le bebe a t-il regurgite ?" << endl << "1 - oui" << endl << "2 - non" << endl << "Reponse : ";
+				cin >> regStat;
+				cout << endl;
 
-	cout << bib.getDrinked() << "  " << bib.getQuantity() << "  " << bib.getQuantityD() << "  " << bib.getRegur();
-	
-	//fin de creation biberon
+				if (drinkStat == 1)
+					drink = true;
+				else if (drinkStat == 2)
+					drink = false;
 
+				if (regStat == 1)
+					regur = true;
+				else if (regStat == 2)
+					regur = false;
+
+				bib.biberonStatut(drink, laitTot, laitTot - laitRest, regur);
+
+				break;
+
+			case 2:
+				clrscr();
+
+				alert newAlert;
+
+				cout << "Dans combien de temps voulez vous votre prochaine alert ?" << endl;
+				cout << "Nombre d'heures : ";
+				cin >> hours;
+
+				retryMinutes:
+					cout << "Nombre de minutes : ";
+					cin >> minutes;
+
+					if (minutes < 0 || minutes > 59){
+						cout << "Error : minutes are invalid, please enter valid values between 0 and 59." << endl;
+						goto retryMinutes;
+					}
+
+				newTimeAlert = hours * 3600000 + minutes * 60000;
+				newAlert.addalert(newTimeAlert);
+
+				break;
+
+			case 3:
+
+				break;
+			case 4:
+
+				break;
+			case 5:
+				system("exit");
+				return 0;
+				break;
+		}
+		goto start;
+	}
 
 	//Liste de course
 	cout << "entrer le nom d'un ingredient : ";
@@ -182,11 +246,7 @@ int main(int argc, char* args[])
 
 	course produit1;
 	produit1.addProduit(ingredient, quantIngr);
-	
-
-
 
 
 	return 0;
-
 }
