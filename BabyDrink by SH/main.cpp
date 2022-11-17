@@ -167,6 +167,7 @@ int main(int argc, char* args[])
 	int choiceMenu;
 	int newTimeAlert, hours, minutes;
 	bool drink = true, regur = true;
+	course produit1;
 
 	//label Start
 	start:
@@ -258,8 +259,7 @@ int main(int argc, char* args[])
 				cin >> ingredient;
 				cout << "entrer la quatité de " << ingredient << " pour un biberon : ";
 				cin >> quantIngr;
-
-				course produit1;
+				//redirection des données vers la classe
 				produit1.addProduit(ingredient, quantIngr);
 
 			case 4:
