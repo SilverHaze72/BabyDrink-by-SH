@@ -1,4 +1,5 @@
-﻿#include "SDL.h"
+﻿//#include "SDL.h"
+//#include "SDL_image.h"
 #undef main
 
 #include <iostream>
@@ -6,12 +7,16 @@
 #include <ctime>
 #include <stdlib.h>
 #include <conio.h>
-#include "SDL_image.h"
 #include <stdio.h>
 #include <cmath>
+#include <vector>
 using namespace std;
 #include "baby.h"
+#include "shopping_List.h"
+#include <list>
 
+
+/*
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
@@ -85,6 +90,7 @@ void close()
 	//Quit SDL subsystems
 	SDL_Quit();
 }
+*/
 
 void clrscr()
 {
@@ -93,6 +99,8 @@ void clrscr()
 
 int main(int argc, char* args[])
 {
+
+	/*
 	//Start up SDL and create window
 	if (!init())
 	{
@@ -144,13 +152,15 @@ int main(int argc, char* args[])
 	//Free resources and close SDL
 	close();
 
-	
+	*/
 
 	string ingredient;
 	int laitTot, laitRest, drinkStat, regStat, quantIngr;
 	int choiceMenu;
 	int newTimeAlert, hours, minutes;
 	bool drink = true, regur = true;
+	string n;
+	int q;
 
 	start:
 		cout << " ---------------------" << endl;
@@ -163,12 +173,11 @@ int main(int argc, char* args[])
 		cout << "1 - Prise de biberon" << endl;
 		cout << "2 - Ajouter une alerte" << endl;
 		cout << "3 - Liste de course" << endl;
-		cout << "4 - Settings" << endl << endl;
-		cout << "5 - Quitter" << endl << endl;
+		cout << "4 - Quitter" << endl << endl;
 		cout << "Choix: ";
 		cin >> choiceMenu;
 
-	if (choiceMenu >= 1 && choiceMenu <= 5) {
+	if (choiceMenu >= 1 && choiceMenu <= 4) {
 		
 		switch (choiceMenu) {
 
@@ -181,6 +190,12 @@ int main(int argc, char* args[])
 				cin >> drinkStat;
 				cout << "entrer la quantite de lait dans le biberon (en cl) : ";
 				cin >> laitTot;
+
+				if (drinkStat == 2) {
+					laitRest = laitTot;
+					regur = false;
+				}
+				
 				cout << "entrer la quantite restante dans le biberon (en cl) : ";
 				cin >> laitRest;
 				cout << " Le bebe a t-il regurgite ?" << endl << "1 - oui" << endl << "2 - non" << endl << "Reponse : ";
@@ -198,7 +213,6 @@ int main(int argc, char* args[])
 					regur = false;
 
 				bib.biberonStatut(drink, laitTot, laitTot - laitRest, regur);
-
 				break;
 
 			case 2:
@@ -221,16 +235,14 @@ int main(int argc, char* args[])
 
 				newTimeAlert = hours * 3600000 + minutes * 60000;
 				newAlert.addalert(newTimeAlert);
-
 				break;
 
 			case 3:
-
+				system("exit");
+				return 0;
 				break;
+				
 			case 4:
-
-				break;
-			case 5:
 				system("exit");
 				return 0;
 				break;
